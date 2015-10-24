@@ -20,3 +20,5 @@ grigio:babel
 accounts-ui
 accounts-password
 accounts-google
+zimme:collection-timestampable
+matb33:collection-hooks

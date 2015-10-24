@@ -5,4 +5,7 @@
       {{> ArticleLine}}
     {{/each}}
   </div>
+  {{#if currentUser}}
+    {{#linkTo route="articleNew"}}Create...{{/linkTo}}
+  {{/if}}
 </template>

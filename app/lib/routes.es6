@@ -14,6 +14,12 @@ Router.route('articles', {
   where: 'client'
 });
 
+Router.route('articles/new', {
+  name: 'articleNew',
+  controller: 'ArticleNewController',
+  where: 'client'
+});
+
 Router.route('articles/:_id', {
   name: 'article',
   controller: 'ArticleController',

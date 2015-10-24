@@ -5,7 +5,17 @@ Template.ArticleEdit.events({
     let title = event.target.title.value;
     let body = event.target.body.value;
 
-    Meteor.call('updateArticle', _id, {title, body});
-    Router.go('article', {_id});
+    if (_id) {
+      Meteor.call('updateArticle', _id, {title, body});
+      Router.go('article', {_id});
+    } else {
+      Meteor.call('createArticle', {title, body});
+      Router.go('articles');
+    }
+  }
+});
+Template.ArticleEdit.helpers({
+  isEdit() {
+    return !!Router.current().params._id;
   }
 });

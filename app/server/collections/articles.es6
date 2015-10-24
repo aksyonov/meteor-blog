@@ -1,7 +1,6 @@
 Articles.deny({
   insert(userId, doc) {
-    doc.userId = userId;
-    return false;
+    return !userId;
   },
 
   update(userId, doc, fieldNames, modifier) {
