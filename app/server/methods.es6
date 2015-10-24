@@ -1,9 +1,5 @@
-/*****************************************************************************/
-/*  Server Methods */
-/*****************************************************************************/
-
 Meteor.methods({
-  'server/method_name': function () {
-    // server method logic
+  updateArticle: function (id, body) {
+    Articles.update(id, {$set: body});
   }
 });

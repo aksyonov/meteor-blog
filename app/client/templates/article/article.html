@@ -1,0 +1,12 @@
+<template name="Article">
+  <div class="article">
+    <h2>
+      {{title}}
+      {{#if isOwner}}
+        {{#linkTo route="articleEdit"}}Edit{{/linkTo}}
+      {{/if}}
+      <a href="/article"></a></h2>
+    <p>{{body}}</p>
+  </div>
+  {{#linkTo route="articles"}}Back{{/linkTo}}
+</template>

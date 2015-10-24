@@ -1,0 +1,18 @@
+<template name="ArticleEdit">
+  <div class="article">
+    <form>
+      <p>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{title}}">
+      </p>
+      <p>
+        <label for="body">Body:</label>
+        <textarea name="body" id="body" rows="10">{{body}}</textarea>
+      </p>
+      <p>
+        <input type="submit" value="Update">
+      </p>
+    </form>
+  </div>
+  {{#linkTo route="article"}}Back{{/linkTo}}
+</template>

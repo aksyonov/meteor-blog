@@ -1,5 +1,8 @@
 <template name="Articles">
   <div class="articles">
-    <h1>Find me in app/client/templates/articles/articles</h1>
+    <h1>Articles</h1>
+    {{#each articles}}
+      {{> ArticleLine}}
+    {{/each}}
   </div>
 </template>
