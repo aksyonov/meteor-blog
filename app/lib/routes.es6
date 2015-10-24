@@ -4,10 +4,8 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-Router.route('/', {
-  name: 'home',
-  controller: 'HomeController',
-  where: 'client'
+Router.route('/', () => {
+  Router.go('articles');
 });
 
 Router.route('articles', {

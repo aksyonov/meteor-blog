@@ -1,5 +1,5 @@
 ArticlesController = RouteController.extend({
   waitOn() {
-    Meteor.subscribe('articles');
+    return Meteor.subscribe('articles');
   }
 });
