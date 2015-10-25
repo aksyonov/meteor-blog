@@ -14,6 +14,7 @@ Template.ArticleEdit.events({
     }
   }
 });
+
 Template.ArticleEdit.helpers({
   isEdit() {
     return !!Router.current().params._id;

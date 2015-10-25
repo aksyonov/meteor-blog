@@ -8,5 +8,14 @@
       <a href="/article"></a></h2>
     <p>{{body}}</p>
   </div>
+  <div class="comments">
+    {{#each comments}}
+      {{> CommentLine}}
+    {{/each}}
+  </div>
+  <form id="comment">
+    <textarea name="body" rows="3"></textarea><br>
+    <input type="submit" value="Send">
+  </form>
   {{#linkTo route="articles"}}Back{{/linkTo}}
 </template>

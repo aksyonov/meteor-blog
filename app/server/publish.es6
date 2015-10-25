@@ -2,6 +2,10 @@ Meteor.publish('articles', () => {
   return Articles.find();
 });
 
-Meteor.publish('article', (id) => {
-  return Articles.find({_id: id});
+Meteor.publish('article', (_id) => {
+  return Articles.find({_id});
+});
+
+Meteor.publish('comments', (articleId) => {
+  return Comments.find({articleId});
 });

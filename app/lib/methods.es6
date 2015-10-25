@@ -4,5 +4,8 @@ Meteor.methods({
   },
   createArticle: function (body) {
     Articles.insert(body);
+  },
+  createComment: function (articleId, body) {
+    Comments.insert({articleId, body});
   }
 });
