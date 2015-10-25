@@ -1,11 +1,13 @@
 <template name="Articles">
-  <div class="articles">
-    <h1>Articles</h1>
+  <div class="articles mdl-cell mdl-cell--12-col">
     {{#each articles}}
       {{> ArticleLine}}
     {{/each}}
   </div>
   {{#if currentUser}}
-    {{#linkTo route="articleNew"}}Create...{{/linkTo}}
+    {{#linkTo route="articleNew" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="new-article"}}
+      <i class="material-icons" role="presentation">add</i>
+      <span class="visuallyhidden">Add</span>
+    {{/linkTo}}
   {{/if}}
 </template>

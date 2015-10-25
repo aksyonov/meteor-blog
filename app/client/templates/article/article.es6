@@ -1,5 +1,5 @@
-Template.Article.events({
-  'submit #comment'(event) {
+Template.CommentForm.events({
+  'submit'(event) {
     event.preventDefault();
     let {_id} = Router.current().params;
     let body = event.target.body.value;
@@ -12,9 +12,6 @@ Template.Article.events({
 });
 
 Template.Article.helpers({
-  isOwner() {
-    return this.userId === Meteor.userId();
-  },
   comments() {
     let articleId = this._id;
     return Comments.find({articleId}, {sort: {createdAt: 1}});

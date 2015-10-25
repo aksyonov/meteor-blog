@@ -1,6 +1,6 @@
 <template name="CommentLine">
   <div class="comment">
-    <strong>{{authorName}}</strong>
-    <span>{{body}}</span>
+    <h5>{{authorName}}</h5>
+    {{#markdown}}{{body}}{{/markdown}}
   </div>
 </template>

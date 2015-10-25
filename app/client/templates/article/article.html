@@ -1,21 +1,19 @@
 <template name="Article">
-  <div class="article">
-    <h2>
+  <div class="content mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--4dp">
+    <div class="demo-crumbs mdl-color-text--grey-500">
+      Author: {{authorName}}
+    </div>
+    <h3>
       {{title}}
-      {{#if isOwner}}
-        {{#linkTo route="articleEdit"}}Edit{{/linkTo}}
-      {{/if}}
-      <a href="/article"></a></h2>
-    <p>{{body}}</p>
+    </h3>
+    {{#markdown}}{{body}}{{/markdown}}
   </div>
-  <div class="comments">
+  <div class="comments content mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">
     {{#each comments}}
       {{> CommentLine}}
     {{/each}}
+    {{#if currentUser}}
+      {{> CommentForm}}
+    {{/if}}
   </div>
-  <form id="comment">
-    <textarea name="body" rows="3"></textarea><br>
-    <input type="submit" value="Send">
-  </form>
-  {{#linkTo route="articles"}}Back{{/linkTo}}
 </template>

@@ -1,4 +1,25 @@
 <template name="MasterLayout">
-  {{> loginButtons}}
-  {{> yield}}
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        {{#linkTo route="articles" class="mdl-layout-title"}}Meteor Blog{{/linkTo}}
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          {{> loginButtons align="right"}}
+        </nav>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content mdl-grid">
+        {{> yield}}
+      </div>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer--left-section">
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="https://github.com/aksyonov/meteor-blog">Github</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </div>
 </template>

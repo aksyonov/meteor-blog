@@ -1,5 +1,61 @@
-/*****************************************************************************/
-/* main: Style */
-/*****************************************************************************/
-.main {
+main.mdl-layout__content {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  flex-direction: column;
+
+  & > .page-content {
+    padding: 8px;
+    padding-top: 48px;
+    width: 100%;
+    max-width: 960px;
+    flex: 1;
+  }
 }
+
+a.login-link-text {
+  color: white;
+}
+
+a.mdl-layout-title {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.edit-article .mdl-textfield {
+  width: 100%;
+}
+
+.content {
+  border-radius: 2px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.comment {
+  font-size: 14px;
+
+  &:not(:first-child) {
+    padding-top: 8px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, .13);
+  }
+
+  h5 {
+    font-size: inherit;
+  }
+}
+
+#comment {
+  .mdl-button {
+    margin-top: -70px;
+    margin-left: 10px;
+  }
+}
+
+@import 'articles';

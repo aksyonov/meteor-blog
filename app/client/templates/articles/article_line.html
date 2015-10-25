@@ -1,6 +1,23 @@
 <template name="ArticleLine">
-  <div class="article">
-    <h2>{{#linkTo route="article"}}{{title}}{{/linkTo}}</h2>
-    <p>{{body}}</p>
-  </div>
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-card__supporting-text">
+        <h4>{{#linkTo route="article"}}{{title}}{{/linkTo}}</h4>
+        {{#markdown}}{{body}}{{/markdown}}
+      </div>
+      <div class="mdl-card__actions">
+        {{#linkTo route="article" class="mdl-button"}}Read{{/linkTo}}
+        <div class="author">
+          Author: {{authorName}}
+        </div>
+      </div>
+      {{#if isOwner}}
+        <div class="mdl-card__menu">
+          {{#linkTo route="articleEdit" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"}}
+            <i class="material-icons">edit</i>
+          {{/linkTo}}
+        </div>
+      {{/if}}
+    </div>
+  </section>
 </template>
